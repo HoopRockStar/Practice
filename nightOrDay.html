@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html"; charset="UTF-8" />
+		<title></title>
+		<script src = "js/jquery.min.js"></script>
+		<script>
+			function writeIt() {
+				var hour = new Date().getHours();
+				var timeOfDay;
+				if ( hour >= 7 && hour < 12) {
+					document.write("Good morning!");
+					timeOfDay = morning;
+				} else if (hour >= 12 && hour < 18) {
+					document.write("Good day!");
+					timeOfDay="day";
+				} else {
+					document.write("Good night!");
+					timeOfDay = "night";
+				}
+				
+				switch(timeOfDay) {
+					case "morning":
+					case "day":
+						document.write("<img src='images/hiker_icon.png' />");
+						break;
+					case "night":
+						document.write("<img src='images/index.jpg' />");
+						break;
+					default:
+						document.write("<img src='images/hiker_icon.png' />");
+						break;
+				}
+			}
+		</script>
+	</head>
+	<body onload="writeIt()">
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html"; charset="UTF-8" />
+		<title>Array Manipulation</title>
+		<style></style>
+		<script>
+			function writeArray(msg,arr) {
+				var arrString = arr.join(" | ");
+				document.write("<b>" + msg + ": </b>" +arrString + "<br><br>");
+			}
+		
+			function writeIt() {
+				var weekdays = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+				writeArray("Week Days", weekdays);
+				
+				var weekend = new Array();
+				weekend.push("Saturday");
+				weekend.push("Sunday");
+				writeArray("Weekend", weekend);
+				
+				var week = weekdays.concat([]);
+				week.unshift(weekend[1]);
+				week.push(weekend[0]);
+				writeArray("Week", week);
+				
+				var midWeek = week.slice(2,5);
+				writeArray("Mid Week", midWeek);
+				
+				var sortedWeek = week.sort();
+				document.write("<b>Sorted Days :</b> <br>");
+				for (dayIndex in sortedWeek) {
+					document.write(sortedWeek[dayIndex] + "<br>");
+				}
+				
+			}
+			
+			
+		</script>
+	</head>
+	<body onload="writeIt()">
+		
+	</body>
+</html>

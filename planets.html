@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="content-type" content="text/html"; charset="UTF-8" />
+		<title>Planets</title>
+		<style>
+		</style>
+		<script>
+			var moonData = {"Earth":["Luna"], "Jupiter":["Io", "Europa"], "Saturn":["Titan", "Rhea"],
+			"Mars":["Phobos"]};
+			
+			function writeIt() {
+				for (planet in moonData) {
+					var moons = moonData[planet];
+					for (moonIdx in moons) {
+						var moon = moons[moonIdx];
+						var listItem = makeListItem(planet, moon);
+						document.write(listItem);
+					}
+				}
+			}
+			
+			function makeListItem(name, value) {
+				var itemStr="<li>" + name + ":&nbsp;" + value + "</li>";
+				return itemStr;
+			}
+		</script>
+	</head>
+	<body onload="writeIt()">
+		
+	</body>
+</html>
